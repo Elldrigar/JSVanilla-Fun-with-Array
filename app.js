@@ -4,6 +4,7 @@ const doubleBtn = document.getElementById('double');
 const showMlnBTN = document.getElementById('show-mln');
 const sortBtn = document.getElementById('sort');
 const calculateBTN = document.getElementById('calculate-all');
+const reset = document.getElementById('reset');
 
 let data = [];
 
@@ -31,6 +32,11 @@ function addData(obj) {
 	updateDOM();
 }
 
+function resetAll() {
+	data = [];
+	updateDOM();
+}
+
 function updateDOM(providedData = data) {
 	main.innerHTML = '<h2><strong>Osoba:</strong> Kasa:</h2>';
 	providedData.forEach(item => {
@@ -48,3 +54,4 @@ return money.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,')
 //EVENT LISTENERS
 addUserBtn.addEventListener('click', getRandomUser);
 doubleBtn.addEventListener('click', doubleMoney);
+reset.addEventListener('click', resetAll);
