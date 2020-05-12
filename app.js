@@ -30,8 +30,11 @@ function updateDOM(providedData = data) {
 	providedData.forEach(item => {
 		const element = document.createElement('div');
 		element.classList.add('person');
-		element.innerHTML = `<strong>${item.name}</strong> ${item.money}`;
+		element.innerHTML = `<strong>${item.name}</strong> ${formatMoney(item.money)}`;
 		main.appendChild(element);
 	});
 }
 
+function formatMoney(money) {
+return money.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,')
+}
