@@ -19,6 +19,13 @@ async function getRandomUser() {
 	addData(newUser);
 }
 
+function doubleMoney() {
+	data = data.map(user => {
+		return {...user, money: user.money * 2 }
+	});
+	updateDOM();
+}
+
 function addData(obj) {
 	data.push(obj);
 	updateDOM();
@@ -40,3 +47,4 @@ return money.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,')
 
 //EVENT LISTENERS
 addUserBtn.addEventListener('click', getRandomUser);
+doubleBtn.addEventListener('click', doubleMoney);
