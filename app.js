@@ -37,6 +37,13 @@ function showMillionaires() {
 	updateDOM();
 }
 
+function calculateTotal() {
+	const total = data.reduce((acc, user) => (acc += user.money), 0);
+	const totalEl = document.createElement('div');
+	totalEl.innerHTML = `<h3>Suma: <strong>${formatMoney(total)}</strong></h3>`;
+	main.appendChild(totalEl);
+}
+
 function addData(obj) {
 	data.push(obj);
 	updateDOM();
@@ -67,3 +74,4 @@ doubleBtn.addEventListener('click', doubleMoney);
 sortBtn.addEventListener('click', sortByRichest);
 reset.addEventListener('click', resetAll);
 showMlnBTN.addEventListener('click', showMillionaires);
+calculateBTN.addEventListener('click', calculateTotal);
