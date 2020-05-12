@@ -59,6 +59,16 @@ h2 {
     margin: 0 0 20px;
 }
 
+h3 {
+    display: flex;
+    justify-content: space-between;
+    font-size: 21px;
+    color: #dddddd;
+    border-bottom: 1px solid #111111;
+    padding: 10px;
+    margin:  20px 0 0;
+}
+
 .person {
     display: flex;
     justify-content: space-between;
