@@ -58,3 +58,10 @@ h2 {
     font-weight: 200;
     margin: 0 0 20px;
 }
+
+.person {
+    display: flex;
+    justify-content: space-between;
+    font-size: 21px;
+    margin-bottom: 10px;
+}
