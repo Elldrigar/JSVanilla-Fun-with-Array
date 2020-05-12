@@ -27,6 +27,11 @@ function doubleMoney() {
 	updateDOM();
 }
 
+function sortByRichest() {
+	data.sort((a,b) => b.money - a.money);
+	updateDOM();
+}
+
 function addData(obj) {
 	data.push(obj);
 	updateDOM();
@@ -54,4 +59,5 @@ return money.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,')
 //EVENT LISTENERS
 addUserBtn.addEventListener('click', getRandomUser);
 doubleBtn.addEventListener('click', doubleMoney);
+sortBtn.addEventListener('click', sortByRichest);
 reset.addEventListener('click', resetAll);
