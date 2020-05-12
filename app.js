@@ -6,7 +6,6 @@ const sortBtn = document.getElementById('sort');
 const calculateBTN = document.getElementById('calculate-all');
 
 let data = [];
-getRandomUser();
 
 async function getRandomUser() {
 	const result = await fetch('https://randomuser.me/api');
@@ -38,3 +37,6 @@ function updateDOM(providedData = data) {
 function formatMoney(money) {
 return money.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,')
 }
+
+//EVENT LISTENERS
+addUserBtn.addEventListener('click', getRandomUser);
